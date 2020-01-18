@@ -9,7 +9,7 @@ Vue.config.ignoredElements = [/^ui5-/];
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/suppliers', component: Suppliers },
+  { path: '/suppliers/:supplier_id', component: Suppliers },
   { path: '/products', component: Products }
 ]
 

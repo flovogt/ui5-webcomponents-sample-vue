@@ -1,5 +1,5 @@
 <template>
- <div>Suppliers</div>
+ <div>Suppliers {{this.$route.params.supplier_id}}</div>
 </template>
 
 <script>

@@ -5,7 +5,7 @@
           </ui5-shellbar>
         </header>
         <section class="app-content">
-            <router-link to="/suppliers">Go to Suppliers</router-link>
+            <router-link to="/suppliers/123">Go to Suppliers</router-link>
             </br>
             <router-link to="/products">Go to Products</router-link>
             <router-view></router-view>
