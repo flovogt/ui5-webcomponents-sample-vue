@@ -1,52 +1,15 @@
 <template>
   <div class="app">
         <header class="app-header">
-          <ui5-shellbar primary-title="UI5 Web Components Vue Sample Application" :logo='logo'>
+          <ui5-shellbar primary-title="UI5 Web Components Vue Sample Application with Routing" :logo='logo'>
           </ui5-shellbar>
         </header>
         <section class="app-content">
-          <div class="create-todo-wrapper">
-            <ui5-input placeholder="My Todo ..." ref="todoInput" class="add-todo-element-width" id="add-input"></ui5-input>
-            <ui5-datepicker format-pattern="dd/MM/yyyy" class="add-todo-element-width" ref="todoDeadline" id="date-picker"></ui5-datepicker>
-            <ui5-button class="add-todo-element-width" ref="addButton" design="Emphasized" @click="handleAdd">Add Todo</ui5-button>
-          </div>
-
-          <div class="list-todos-wrapper">
-            <TodoList :todos="todos" @selection-change="handleDone"
-            @item-deleted="handleRemove"
-            @item-edit="handleEdit">
-            </TodoList>
-
-            <ui5-panel header-text="Completed tasks">
-              <TodoList :todos="doneTodos" @selection-change="handleUndone"
-              @item-deleted="handleRemove"
-              @item-edit="handleEdit">
-              </TodoList>
-            </ui5-panel>
-          </div>
+            <router-link to="/suppliers">Go to Suppliers</router-link>
+            </br>
+            <router-link to="/products">Go to Products</router-link>
+            <router-view></router-view>
         </section>
-        <ui5-dialog header-text="Edit Todo item" ref="editDialog">
-          <div class="dialog-content">
-            <div class="edit-wrapper">
-                <ui5-label>Title:</ui5-label>
-                <ui5-textarea class="title-textarea"
-                  show-exceeded-text
-                  max-length="24"
-                  :value="todoBeingEdittedText"
-                  ref="titleEditInput">
-                </ui5-textarea>
-            </div>
-
-            <div class="edit-wrapper date-edit-fields">
-                <ui5-label>Date:</ui5-label>
-                <ui5-datepicker format-pattern="dd/MM/yyyy" :value="todoBeingEdittedDate" ref="dateEditInput"></ui5-datepicker>
-            </div>
-          </div>
-            <div class="dialog-footer" data-ui5-slot="footer">
-              <ui5-button design="Transparent" @click="cancelEdits">Cancel</ui5-button>
-              <ui5-button design="Emphasized" @click="saveEdits">Save</ui5-button>
-            </div>
-        </ui5-dialog>
       </div>
 </template>
 
